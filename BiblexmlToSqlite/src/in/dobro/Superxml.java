@@ -100,8 +100,11 @@ public class Superxml {
 	        for (int iglav = 0; iglav < nodes.getLength(); iglav++) {
 	        	String str = nodes.item(iglav).getAttributes().item(0).getTextContent();
 	        	bookglav = str.split("\\.");
+	        	
+	        	String poemtext = nodes.item(iglav).getTextContent();
+	        	String poemtext2 = poemtext.replaceAll("\"", "");
 
-	        	String inserttobase = "insert into "+lang+"text(bible, chapter, poem, poemtext) values(" + i + "," + bookglav[1] + "," + bookglav[2] + ",\""  + nodes.item(iglav).getTextContent() + "\");"; 
+	        	String inserttobase = "insert into "+lang+"text(bible, chapter, poem, poemtext) values(" + i + "," + bookglav[1] + "," + bookglav[2] + ",\""  + poemtext2 + "\");"; 
 	        	statement.execute(inserttobase);
 	        	
 	            System.out.println(i + "/" + bookglav[1] + "/" + bookglav[2] + "/"  + nodes.item(iglav).getTextContent()); 

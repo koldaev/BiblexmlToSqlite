@@ -14,7 +14,7 @@ public class Mainxml extends Superxml {
 
 public static void main(String[] args) throws ClassNotFoundException, XPathExpressionException, SQLException, ParserConfigurationException, SAXException, IOException   {
 
-	new Mainxml("th");
+	new Mainxml("gr");
 
 }
   
